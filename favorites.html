@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div class="dropdown">
+        <span class="dropbtn">Options</span>
+        <div class="dropdown-content">
+            <a href="index.html">Currency Converter</a>
+            <a href="history.html">Conversion History</a>
+            <a href="currencyInfo.html">Currency Information</a>
+            <a href="graphicalTrend.html">Graphical Trend of Currencies</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Favorites</h1>
+        <form id="favoriteForm">
+            <div class="form-group">
+                <label for="favoriteFromCurrency">From:</label>
+                <select id="favoriteFromCurrency">
+		    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="AUD">AUD</option>
+		            <option value="GBP">GBP</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CNY">CNY</option>
+                    <option value="BAM">BAM</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="favoriteToCurrency">To:</label>
+                <select id="favoriteToCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="AUD">AUD</option>
+		    <option value="GBP">GBP</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CNY">CNY</option>
+                    <option value="BAM">BAM</option>
+                </select>
+            </div>
+            <button type="button" onclick="addFavorite()">Add to Favorites</button>
+        </form>
+        <h2>Your Favorites</h2>
+        <ul id="favoritesList"></ul>
+    </div>
+
+    <script src="js/favorites.js"></script>
+</body>
+</html>

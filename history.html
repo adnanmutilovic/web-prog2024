@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion History</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div class="dropdown">
+        <span class="dropbtn">Options</span>
+        <div class="dropdown-content">
+        <a href="index.html">Currency Converter</a>
+        <a href="currencyInfo.html">Currency Information</a>
+	    <a href="graphicalTrend.html">Graphical Trend of Currencies</a>
+ 	    <a href="favorites.html">Favorite Currencies</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Conversion History</h1>
+        <ul id="historyDisplay"></ul>
+    </div>
+    <script>
+        window.onload = function() {
+        const historyDisplay = document.getElementById('historyDisplay');
+            const history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
+
+            history.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.amount} ${item.fromCurrency} to ${item.convertedAmount} ${item.toCurrency}`;
+            historyDisplay.appendChild(listItem);
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Information</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div class="dropdown">
+        <span class="dropbtn">Options</span>
+        <div class="dropdown-content">
+            <a href="index.html">Currency Converter</a>
+            <a href="history.html">Conversion History</a>
+            <a href="graphicalTrend.html">Graphical Trend of Currencies</a>
+            <a href="favorites.html">Favorite Currencies</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Currency Information</h1>
+        <select id="currencySelect">
+            <option value="" disabled selected>Select a currency</option>
+            <option value="AUD">Australian Dollar (AUD)</option>
+            <option value="USD">United States Dollar (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="GBP">British Pound (GBP)</option>
+            <option value="CAD">Canadian Dollar (CAD)</option>
+            <option value="CHF">Swiss Franc (CHF)</option>
+            <option value="JPY">Japanese Yen (JPY)</option>
+            <option value="CNY">Chinese Yuan (CNY)</option>
+            <option value="BAM">Bosnian Convertible Mark (BAM)</option>
+        </select>
+        <div id="currencyInfo"></div>
+    </div>
+
+    <script>
+        const currencyDetails = {
+            AUD: {
+                name: "Australian Dollar",
+                symbol: "$",
+                country: "Australia",
+                introduced: "1966",
+                facts: "The Australian Dollar is often referred to as the 'Aussie dollar'. Australia's currency features unique designs of the Australian wildlife. It was the first currency in the world to use polymer banknotes.",
+                image: "images/AUD.jpg"
+            },
+            USD: {
+                name: "United States Dollar",
+                symbol: "$",
+                country: "United States",
+                introduced: "1792",
+                facts: "The USD is the most widely used currency for global transactions. The symbol ($) has its origins in the Spanish dollar's sign.",
+                image: "images/USD.jpg"
+            },
+            EUR: {
+                name: "Euro",
+                symbol: "€",
+                country: "Eurozone",
+                introduced: "1999",
+                facts: "The Euro is the second-largest and second-most traded currency in the foreign exchange market. Euro banknotes and coins are standardized across countries.",
+                image: "images/EUR.jpg"
+            },
+            GBP: {
+                name: "British Pound",
+                symbol: "£",
+                country: "United Kingdom",
+                introduced: "775",
+                facts: "One of the oldest currencies still in use today. It's known for its stability and is often symbolized by £.",
+                image: "images/GBP.jpg"
+            },
+            CAD: {
+                name: "Canadian Dollar",
+                symbol: "CAD",
+                country: "Canada",
+                introduced: "1858",
+                facts: 'Often called the "loonie" because of the loon bird featured on the CA$1 coin.',
+                image: "images/CAD.jpg"
+            },
+            CHF: {
+                name: "Swiss Franc",
+                symbol: "CHF",
+                country: "Switzerland",
+                introduced: "1850",
+                facts: 'Known for being a "safe-haven" currency because of Switzerland\'s stable economy and financial system.',
+                image: "images/CHF.jpg"
+            },
+            JPY: {
+                name: "Japanese Yen",
+                symbol: "JPY",
+                country: "Japan",
+                introduced: "1871",
+                facts: "The most traded currency in Asia, characterized by its relatively low interest rates.",
+                image: "images/JPY.jpg"
+            },
+            CNY: {
+                name: "Chinese Yuan",
+                symbol: "CNY",
+                country: "China",
+                introduced: "1948",
+                facts: "Also known as Renminbi. It's becoming more influential in international finance.",
+                image: "images/CNY.jpg"
+            },
+            BAM: {
+                name: "Bosnian Convertible Mark",
+                symbol: "BAM",
+                country: "Bosnia and Herzegovina",
+                introduced: "1995",
+                facts: "Pegged to the Euro at a fixed rate of 1 EUR = 1.95583 BAM. It replaced the Bosnian Dinar as part of the Dayton Agreement.",
+                image: "images/BAM.jpg"
+            }
+        };
+
+        document.getElementById('currencySelect').addEventListener('change', function() {
+            if (this.value === "") {
+                document.getElementById('currencyInfo').innerHTML = "";
+                return;
+            }
+            const selectedCurrency = currencyDetails[this.value];
+            document.getElementById('currencyInfo').innerHTML = `
+                <div style="text-align: center; margin-top: 20px;">
+                    <img src="${selectedCurrency.image}" alt="${selectedCurrency.name}" style="width:300px;height:auto;display:block;margin:auto;"><br>
+                    <h2>${selectedCurrency.name} (${selectedCurrency.symbol})</h2>
+                    <p><strong>Country:</strong> ${selectedCurrency.country}</p>
+                    <p><strong>Introduced:</strong> ${selectedCurrency.introduced}</p>
+                    <p><strong>Facts:</strong> ${selectedCurrency.facts}</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
