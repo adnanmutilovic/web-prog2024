@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <ul id="currenciesList"></ul>
+    <div class="top-right-buttons">
+        <div id="auth-buttons">
+            <a href="#" class="auth-button login" onclick="window.loadContent('login')">Login</a>
+            <a href="#" class="auth-button register" onclick="window.loadContent('register')">Register</a>
+        </div>
+        <div id="user-info"></div>
+    </div>
+
+    <div class="dropdown">
+        <span class="dropbtn">Options</span>
+        <div class="dropdown-content">
+            <a href="#" data-page="home">Currency Converter</a>
+            <a href="#" data-page="currencyInfo">Currency Information</a>
+            <a href="#" data-page="history">Conversion History</a>
+        </div>
+    </div> 
+
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <img src="images/HOME.jpg" alt="Currency Converter Logo" style="display: block; margin: 20px auto;">
+        <form id="converterForm">
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter amount" required>
+            </div>
+            <div class="form-group">
+                <label for="fromCurrency">From:</label>
+                <select id="fromCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="AUD">AUD</option>
+		            <option value="GBP">GBP</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CNY">CNY</option>
+                    <option value="BAM">BAM</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="toCurrency">To:</label>
+                <select id="toCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="AUD">AUD</option>
+		            <option value="GBP">GBP</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CNY">CNY</option>
+                    <option value="BAM">BAM</option>
+                </select>
+            </div>
+            <button type="submit">Convert</button>
+        </form>
+        <div id="conversionResult" style="text-align: center; margin-top: 20px; display: none;"></div>
+    </div>
+    
+    <div id="spa-content"> </div>
+
+    <script src="js/app.js"></script>
+    <script src="api/currencyApi.js"></script>
+</body>
+</html>
