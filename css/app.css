@@ -3,7 +3,10 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
+<<<<<<< HEAD
     position: relative; 
+=======
+>>>>>>> 3e696fa54d4dae72a7128331c5709257707219da
 }
 
 .container {
@@ -28,7 +31,11 @@ label {
     margin-bottom: 5px;
 }
 
+<<<<<<< HEAD
 input[type="number"], select, input[type="text"] {
+=======
+input[type="number"], select {
+>>>>>>> 3e696fa54d4dae72a7128331c5709257707219da
     width: calc(100% - 20px); 
     padding: 10px;
     margin-top: 5px;
@@ -36,7 +43,11 @@ input[type="number"], select, input[type="text"] {
     box-sizing: border-box; 
 }
 
+<<<<<<< HEAD
 button, #logoutButton {
+=======
+button {
+>>>>>>> 3e696fa54d4dae72a7128331c5709257707219da
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -44,6 +55,7 @@ button, #logoutButton {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+<<<<<<< HEAD
     margin-top: 10px;
 }
 
@@ -62,6 +74,14 @@ button:hover, #logoutButton:hover {
     background-color: #218838;
 }
 
+=======
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+>>>>>>> 3e696fa54d4dae72a7128331c5709257707219da
 .conversion-history {
     margin-top: 20px;
 }
@@ -89,14 +109,22 @@ button:hover, #logoutButton:hover {
 
 .dropbtn {
     background-color: #007bff;
+<<<<<<< HEAD
     color: black;
+=======
+    color: white;
+>>>>>>> 3e696fa54d4dae72a7128331c5709257707219da
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 .dropdown-content, .user-info-dropdown-content {
+=======
+.dropdown-content {
+>>>>>>> 3e696fa54d4dae72a7128331c5709257707219da
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -106,13 +134,18 @@ button:hover, #logoutButton:hover {
     margin-top: 5px; 
 }
 
+<<<<<<< HEAD
 .dropdown-content a, .user-info-dropdown-content a {
+=======
+.dropdown-content a {
+>>>>>>> 3e696fa54d4dae72a7128331c5709257707219da
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
+<<<<<<< HEAD
 .dropdown-content a:hover, .user-info-dropdown-content a:hover {
     background-color: #f1f1f1;
 }
@@ -201,3 +234,10 @@ button:hover, #logoutButton:hover {
 #logoutButton:hover {
     background-color: #c82333; 
 }
+=======
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #0056b3;}
+>>>>>>> 3e696fa54d4dae72a7128331c5709257707219da

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphical Trend</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dropdown">
+        <span class="dropbtn">Options</span>
+        <div class="dropdown-content">
+            <a href="index.html">Currency Converter</a>
+            <a href="history.html">Conversion History</a>
+            <a href="currencyInfo.html">Currency Information</a>
+            <a href="favorites.html">Favorite Currencies</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Graphical Trend of Currencies</h1>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw; margin-bottom: 20px;"><canvas id="trendUSDToEUR"></canvas></div>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw; margin-bottom: 20px;"><canvas id="trendAUDToEUR"></canvas></div>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw; margin-bottom: 20px;"><canvas id="trendUSDToAUD"></canvas></div>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw; margin-bottom: 20px;"><canvas id="trendEURToGBP"></canvas></div>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw; margin-bottom: 20px;"><canvas id="trendGBPToJPY"></canvas></div>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw; margin-bottom: 20px;"><canvas id="trendCADToCHF"></canvas></div>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw; margin-bottom: 20px;"><canvas id="trendJPYToCNY"></canvas></div>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw; margin-bottom: 20px;"><canvas id="trendCHFToEUR"></canvas></div>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw; margin-bottom: 20px;"><canvas id="trendAUDToCAD"></canvas></div>
+        <div class="chart-container" style="position: relative; height:30vh; width:80vw;"><canvas id="trendCNYToUSD"></canvas></div>
+    </div>
+
+    <script>
+        function initChart(chartId, label, data, borderColor) {
+            var ctx = document.getElementById(chartId).getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['September', 'October', 'November', 'December', 'January', 'February'],
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        borderColor: borderColor,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: false
+                        }
+                    }
+                }
+            });
+        }
+        
+        initChart('trendUSDToEUR', 'USD to EUR Trend', [1.1, 1.2, 1.15, 1.17, 1.14, 1.13], 'rgb(75, 192, 192)');
+        initChart('trendAUDToEUR', 'AUD to EUR Trend', [0.61, 0.62, 0.63, 0.64, 0.65, 0.66], 'rgb(192, 75, 192)');
+        initChart('trendUSDToAUD', 'USD to AUD Trend', [1.4, 1.42, 1.38, 1.4, 1.35, 1.33], 'rgb(192, 192, 75)');
+        initChart('trendEURToGBP', 'EUR to GBP Trend', [0.85, 0.86, 0.87, 0.88, 0.89, 0.90], 'rgb(255, 159, 64)');
+        initChart('trendGBPToJPY', 'GBP to JPY Trend', [140, 142, 138, 141, 145, 147], 'rgb(153, 102, 255)');
+        initChart('trendCADToCHF', 'CAD to CHF Trend', [0.74, 0.75, 0.73, 0.76, 0.77, 0.78], 'rgb(255, 99, 132)');
+        initChart('trendJPYToCNY', 'JPY to CNY Trend', [0.06, 0.061, 0.062, 0.063, 0.064, 0.065], 'rgb(54, 162, 235)');
+        initChart('trendCHFToEUR', 'CHF to EUR Trend', [0.92, 0.93, 0.91, 0.94, 0.95, 0.96], 'rgb(255, 206, 86)');
+        initChart('trendAUDToCAD', 'AUD to CAD Trend', [0.96, 0.97, 0.98, 0.99, 1.0, 1.01], 'rgb(75, 192, 192)');
+        initChart('trendCNYToUSD', 'CNY to USD Trend', [0.14, 0.142, 0.144, 0.146, 0.148, 0.15], 'rgb(255, 159, 64)');
+    </script>
+</body>
+</html>
